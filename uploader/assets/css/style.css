@@ -15,13 +15,7 @@
 
 
 html{
-    background-color:#ebebec;
 
-    background-image:-webkit-radial-gradient(center, #ebebec, #b4b4b4);
-    background-image:-moz-radial-gradient(center, #ebebec, #b4b4b4);
-    background-image:radial-gradient(center, #ebebec, #b4b4b4);
-
-    min-height:900px;
 }
 
 body{
