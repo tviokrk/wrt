@@ -43,8 +43,7 @@ switch ($plik_blad) {
 }
  
 /* sprawdzenie rozszerzenia pliku - dzięki temu mamy pewność, że ktoś nie zapisze na serwerze pliku .php */
-$dozwolone_rozszerzenia=array("txt");
-$dozwolona_nazwa=array("ceneo.txt");
+$dozwolone_rozszerzenia=array("png");
 
 $plik_rozszerzenie=pathinfo(strtolower($plik_nazwa), PATHINFO_EXTENSION);
 $plik_nazwa2=strtolower($plik_nazwa);
@@ -52,10 +51,6 @@ if (!in_array($plik_rozszerzenie, $dozwolone_rozszerzenia, true)) {
     exit("Niedozwolone rozszerzenie pliku.");
 }
 
-/* sprawdzenie nazwy pliku */
-if (!in_array($plik_nazwa2, $dozwolona_nazwa, true)) {
-    exit("Niedozwolona nazwa.");
-}
  
 /* przeniesienie pliku z folderu tymczasowego do właściwej lokalizacji */
 if (!move_uploaded_file($plik_lokalizacja, $folder_upload."/".$plik_nazwa)) {
