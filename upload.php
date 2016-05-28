@@ -11,7 +11,7 @@ include('s3_config.php');
 		exit;
 	}
 
-	if(move_uploaded_file($_FILES['upl']['tmp_name'], './uploads/'.$_FILES['upl']['name'])){
+	if(move_uploaded_file($_FILES['upl']['tmp_name'], './upload/'.$_FILES['upl']['name'])){
 		echo 'SUKCES';
 		echo '{"status":"success"}';
 		exit;
