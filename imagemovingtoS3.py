@@ -9,12 +9,12 @@ def hello():
 
 @app.route("/")
 def index():
-  return render_template('upload_form.html', uploadButtonName="send")
+  return render_template('upload.html')
 
 @app.route("/upload", methods=['POST'])
 def upload():
   files = request.files
-  for f in files.getlist('file'):
+  for f in files.getlist('upl'):
     print f
     upload_s3(f)
     filename = f.filename
@@ -23,7 +23,7 @@ def upload():
   return jsonify()
 
 def upload_s3(source_file):
-  bucket_name = '153412-kkanclerz'
+  bucket_name = '160689-michalo'
   destination_filename = "photos/%s/%s" % (uuid4().hex, source_file.filename)
   s3 = boto3.resource('s3')
   bucket = s3.Bucket(bucket_name)
