@@ -6,15 +6,9 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
 $name = $_FILES['file']['name'];
 $size = $_FILES['file']['size'];
 $tmp = $_FILES['file']['tmp_name'];
-$ext = getExtension($name);
 
-if(strlen($name) > 0)
-{
-// File format validation
 
-// File size validation
-if($size<(1024*1024))
-{
+
 include('s3_config.php');
 //Rename image name.
 $actual_image_name = time().".".$ext;
@@ -30,15 +24,7 @@ echo "2";
 else
 $msg = "S3 Upload Fail.";
 echo "9";
-}
 
-else
-$msg = "Invalid file, please upload image file.";
-echo "9";
-}
-else
-$msg = "Please select image file.";
-echo "9";
 }
 ?>
 
