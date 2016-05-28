@@ -11,8 +11,7 @@ $ext = getExtension($name);
 if(strlen($name) > 0)
 {
 // File format validation
-if(in_array($ext,$valid_formats))
-{
+
 // File size validation
 if($size<(1024*1024))
 {
@@ -32,10 +31,7 @@ else
 $msg = "S3 Upload Fail.";
 echo "9";
 }
-else
-$msg = "Image size Max 1 MB";
-echo "9";
-}
+
 else
 $msg = "Invalid file, please upload image file.";
 echo "9";
