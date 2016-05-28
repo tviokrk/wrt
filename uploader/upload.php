@@ -23,7 +23,7 @@ $plik_blad=$_FILES['plik']['error']; //kod błędu
  
 /* sprawdzenie, czy plik został wysłany */
 if (!$plik_lokalizacja) {
-    exit("<p>Nie wysłano żadnego pliku</p>");
+    exit("<p>Nie wysłano żadnego pliku :(</p>");
 }
  
 /* sprawdzenie błędów */
