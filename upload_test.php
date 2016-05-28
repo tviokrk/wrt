@@ -19,29 +19,30 @@ if($size<(1024*1024))
 include('s3_config.php');
 //Rename image name.
 $actual_image_name = time().".".$ext;
-
+echo "1";
 if($s3->putObjectFile($tmp, $bucket , $actual_image_name, S3::ACL_PUBLIC_READ) )
 {
 $msg = "S3 Upload Successful.";
 $s3file='http://'.$bucket.'.s3.amazonaws.com/'.$actual_image_name;
 echo "<img src='$s3file'/>";
 echo 'S3 File URL:'.$s3file;
+echo "2";
 }
 else
 $msg = "S3 Upload Fail.";
-
+echo "9";
 }
 else
 $msg = "Image size Max 1 MB";
-
+echo "9";
 }
 else
 $msg = "Invalid file, please upload image file.";
-
+echo "9";
 }
 else
 $msg = "Please select image file.";
-
+echo "9";
 }
 ?>
 
