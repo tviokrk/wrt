@@ -45,11 +45,8 @@ section, footer, header, aside{
     font-family:'PT Sans Narrow', sans-serif;
     background-color:#99CCFF;
 
-    background-image:-webkit-linear-gradient(top, #373a3d, #313437);
-    background-image:-moz-linear-gradient(top, #373a3d, #313437);
-    background-image:linear-gradient(top, #373a3d, #313437);
 
-    width:800px;
+    width:755px;
     padding:30px;
     border-radius:3px;
 
