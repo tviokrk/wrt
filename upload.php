@@ -11,7 +11,7 @@ include('s3_config.php');
 		exit;
 	}
 
-	if($s3->putObjectFile($_FILES['upl']['tmp_name'], $bucket, $_FILES['upl']['name'], , S3::ACL_PUBLIC_READ)){
+	if(move_uploaded_file($_FILES['upl']['tmp_name'], './uploads/'.$_FILES['upl']['name'])){
 		echo 'SUKCES';
 		echo '{"status":"success"}';
 		exit;
