@@ -8,7 +8,7 @@
 		<center><br><h5>Załącz zdjęcia z rozszerzeniem .jpg</h5>
 
 <form method="post" action="upload.php" enctype="multipart/form-data">
-  <input name="filesToUpload[]" id="filesToUpload" type="file" multiple="" />
+  <input name="file" type="file" />
   <input type="submit" value="Send files" />
 </form>
 <br>
