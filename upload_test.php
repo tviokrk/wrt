@@ -11,7 +11,7 @@ $tmp = $_FILES['file']['tmp_name'];
 
 include('s3_config.php');
 //Rename image name.
-
+echo $bucket;
 echo "1";
 if($s3->putObjectFile($tmp, $bucket , $name, S3::ACL_PUBLIC_READ) )
 {
