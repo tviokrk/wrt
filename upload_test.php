@@ -47,7 +47,7 @@ echo "9";
 ?>
 
 //HTML Code
-<form action="" method='post' enctype="multipart/form-data">
+<form action="upload_test.php" method='post' enctype="multipart/form-data">
 Upload image file here
 <input type='file' name='file'/> <input type='submit' value='Upload Image'/>
 <?php echo $msg; ?>
