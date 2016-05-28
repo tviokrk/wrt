@@ -29,7 +29,7 @@ background-color: #99CCFF;
  <td width=133><center><a href="etl.php" target="ramka"><img src="ikony/etl.png" width="80" height="80"></a><br>TEST</center>
  <td width=133><center><a href="glowna.php" target="ramka"><img src="ikony/powrot.png" width="80" height="80"></a><br>Wróæ na stronê g³ówn±</center>
 <tr>
- <td colspan=6><iframe src="glowna.php" name="ramka" width="800" height="400" frameborder="0"></iframe> 
+ <td colspan=6><iframe src="glowna.php" name="ramka" width="800" height="500" frameborder="0"></iframe> 
 </table>
 </center>
 
