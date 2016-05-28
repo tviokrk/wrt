@@ -14,7 +14,7 @@
 <br>
 <?php
 /* utworzenie zmiennych */
-$folder_upload="./uploads";
+$folder_upload="/home/ec2-user/photoAlbumUi/upload";
 $plik_nazwa=$_FILES['plik']['name'];
 $plik_lokalizacja=$_FILES['plik']['tmp_name']; //tymczasowa lokalizacja pliku
 $plik_mime=$_FILES['plik']['type']; //typ MIME pliku wysłany przez przeglądarkę
