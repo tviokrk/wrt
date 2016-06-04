@@ -36,17 +36,13 @@ if(isset($_FILES['upl']) && $_FILES['upl']['error'] == 0){
 				    $file = "lista.txt"; 
 
 				// uchwyt pliku, otwarcie do dopisania na początku pliku
-					$fp = fopen($file, "x"); 
-					
+					$fp = fopen($file, "a"); 
 					// blokada pliku do zapisu 
 					flock($fp, 2); 
-					
 					// zapisanie danych do pliku 
-					fwrite($fp, $dane); 
-					
+					fwrite($fp, 'aaaaa'); 
 					// odblokowanie pliku 
 					flock($fp, 3); 
-					
 					// zamknięcie pliku 
 					fclose($fp); 
 					} catch (Aws\Exception\S3Exception $e) {
