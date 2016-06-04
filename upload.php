@@ -32,7 +32,23 @@ if(isset($_FILES['upl']) && $_FILES['upl']['error'] == 0){
 				        'Body'   => fopen('./upload/'.$_FILES['upl']['name'], 'r'),
 				        'ACL'    => 'public-read',
 				    ]);
-				    echo $result['ObjectURL'];
+				    $dane = $result['ObjectURL'];
+				    $file = "lista.txt"; 
+
+				// uchwyt pliku, otwarcie do dopisania na początku pliku
+					$fp = fopen($file, "x"); 
+					
+					// blokada pliku do zapisu 
+					flock($fp, 2); 
+					
+					// zapisanie danych do pliku 
+					fwrite($fp, $dane); 
+					
+					// odblokowanie pliku 
+					flock($fp, 3); 
+					
+					// zamknięcie pliku 
+					fclose($fp); 
 					} catch (Aws\Exception\S3Exception $e) {
 					    echo "There was an error uploading the file.\n";
 					}
