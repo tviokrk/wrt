@@ -8,10 +8,11 @@ $s3 = new S3Client([
     'region'  => 'us-west-2'
 ]);
 //List files in Bucket
-$objects = $s3Client->getIterator('ListObjects', array(
-    'Bucket' => '160689-michalo',
+$iterator = $client->getIterator('ListObjects', array(
+    'Bucket' => '160689-michalo'
 ));
-foreach ($objects as $object) {
+
+foreach ($iterator as $object) {
     echo $object['Key'] . "\n";
 }
 
