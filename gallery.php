@@ -41,7 +41,7 @@ $file = fopen($file_name, "r");
 while(!feof($file))
 {
  echo fgets($file). „<br />”;
- echo '<li><a href="'.fgets($file).'" class="highslide" onclick="return hs.expand(this)"><img width="200" height="133" src="'.fgets($file)'" /></a></li>';
+// echo '<li><a href="'.fgets($file).'" class="highslide" onclick="return hs.expand(this)"><img width="200" height="133" src="'.fgets($file)'" /></a></li>';
 }
 fclose($file);
 
