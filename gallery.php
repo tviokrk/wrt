@@ -37,10 +37,11 @@
 <ul>
 <?php
 $file_name = "./upload/lista.txt";
-$file = fopen($file_name, "r");
+$file = file($file_name);
+$i=0;
 while(!feof($file))
 {
- $link = fgets($file);
+ $link = $file_name[$i];
  //echo $link;
  echo '<li><a href="'.$link.'" class="highslide" onclick="return hs.expand(this)"><img width="200" height="133" src="'.$link.'" /></a></li>';
 }
