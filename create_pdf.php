@@ -16,9 +16,10 @@ $objects = $s3->getIterator('ListObjects', array(
     "Bucket" => $bucket,
 
 ));
-
+try {
 foreach ($objects as $object) {
     echo $object['Key'] . "<br>";
+}
 }catch (Aws\Exception\S3Exception $e) {
 					    echo "There was an error uploading the file.\n";
 					}
