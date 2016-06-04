@@ -32,6 +32,7 @@ if(isset($_FILES['upl']) && $_FILES['upl']['error'] == 0){
 				        'Body'   => fopen('./upload/'.$_FILES['upl']['name'], 'r'),
 				        'ACL'    => 'public-read',
 				    ]);
+				    echo $result['ObjectURL'];
 					} catch (Aws\Exception\S3Exception $e) {
 					    echo "There was an error uploading the file.\n";
 					}
