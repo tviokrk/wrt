@@ -32,7 +32,7 @@ if(isset($_FILES['upl']) && $_FILES['upl']['error'] == 0){
 				        'Body'   => fopen('./upload/'.$_FILES['upl']['name'], 'r'),
 				        'ACL'    => 'public-read',
 				    ]);
-				    $dane = $result['ObjectURL'];
+				    $dane = $s3['ObjectURL'];
 				    $file = "./upload/lista.txt"; 
 
 				// uchwyt pliku, otwarcie do dopisania na początku pliku
