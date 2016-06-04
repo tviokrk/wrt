@@ -28,7 +28,7 @@ if(isset($_FILES['upl']) && $_FILES['upl']['error'] == 0){
 			try {
 				   $result = $s3->putObject([
 				        'Bucket' => '160689-michalo',
-				        'Key'    => 'my-object'.$_FILES['upl']['name'],
+				        'Key'    => 'album_'.$_FILES['upl']['name'],
 				        'Body'   => fopen('./upload/'.$_FILES['upl']['name'], 'r'),
 				        'ACL'    => 'public-read',
 				    ]);
