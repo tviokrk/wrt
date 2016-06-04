@@ -37,7 +37,7 @@
 <ul>
 <?php
 $file_name = "./upload/lista.txt";
-$file = implode('\n', $file_name);;
+$file = file($file_name);
 $i=0;
 while(!feof($file))
 {
