@@ -33,7 +33,7 @@ if(isset($_FILES['upl']) && $_FILES['upl']['error'] == 0){
 				        'ACL'    => 'public-read',
 				    ]);
 				    $dane = $result['ObjectURL'];
-				    $file = "lista.txt"; 
+				    $file = "./upload/lista.txt"; 
 
 				// uchwyt pliku, otwarcie do dopisania na początku pliku
 					$fp = fopen($file, "a"); 
