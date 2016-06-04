@@ -40,7 +40,7 @@ if(isset($_FILES['upl']) && $_FILES['upl']['error'] == 0){
 					// blokada pliku do zapisu 
 					flock($fp, 2); 
 					// zapisanie danych do pliku 
-					fwrite($fp, $dane); 
+					fwrite($fp, $dane."\r\n"); 
 					// odblokowanie pliku 
 					flock($fp, 3); 
 					// zamknięcie pliku 
