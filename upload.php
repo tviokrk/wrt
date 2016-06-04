@@ -10,7 +10,7 @@ $s3 = new S3Client([
     'region'  => 'us-west-2'
 ]);
 $file = "./upload/lista.txt"; 
-unlink($file);
+//unlink($file);
 // A list of permitted file extensions
 $allowed = array('png', 'jpg', 'gif','zip');
 if(isset($_FILES['upl']) && $_FILES['upl']['error'] == 0){
