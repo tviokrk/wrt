@@ -36,6 +36,7 @@ if(isset($_FILES['upl']) && $_FILES['upl']['error'] == 0){
 				    $file = "./upload/lista.txt"; 
 
 				// uchwyt pliku, otwarcie do dopisania na początku pliku
+				unlink($file)
 					$fp = fopen($file, "a"); 
 					// blokada pliku do zapisu 
 					flock($fp, 2); 
