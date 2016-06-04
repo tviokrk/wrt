@@ -36,7 +36,7 @@
 <div id="galeria">
 <ul>
 <?php
-$file_name = "./upload/lista.txt";
+$file_name = "./upload/lista";
 $link = file($file_name);
 for ($i=0; $i<count($link); $i++)
 {
