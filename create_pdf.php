@@ -2,20 +2,10 @@
 // Require the Composer autoloader.
 require 'vendor/autoload.php';
 use Aws\S3\S3Client;
-use Aws\Common\Aws;
 
-// Create a service builder using a configuration file
-$aws = Aws::factory('./composer.json');
-
-// Get the client from the builder by namespace
-$client = $aws->get('S3');
-// Instantiate an Amazon S3 client.
-$s3 = new S3Client([
-    'version' => 'latest',
-    'region'  => 'us-west-2'
-]);
+$s3Client = S3Client::factory(array('key' => 'AKIAIXPGZAUCI7HCXYFA', 'secret' => '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'));
 //List files in Bucket
-$iterator = $client->getIterator('ListObjects', array(
+$iterator = $s3Client->getIterator('ListObjects', array(
     'Bucket' => '160689-michalo'
 ));
 
