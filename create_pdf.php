@@ -17,7 +17,4 @@ $objects = $s3->getIterator('ListObjects', array(
 
 ));
 
-foreach ($objects as $object) {
-    echo $object['Key'] . "<br>";
-}
 exit;
