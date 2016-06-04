@@ -13,7 +13,7 @@ $s3 = new S3Client([
      'region'  => 'us-west-2'
  ]);
 // Instantiate the client.
-$s3 = S3Client::factory();
+
 
 // Use the high-level iterators (returns ALL of your objects).
 try {
