@@ -7,11 +7,11 @@ use Aws\S3\S3Client;
 use Aws\S3\Exception\S3Exception;
 
 $bucket = '160689-michalo';
--// Instantiate an Amazon S3 client.
- -$s3 = new S3Client([
- -    'version' => 'latest',
- -    'region'  => 'us-west-2'
- -]);
+// Instantiate an Amazon S3 client.
+$s3 = new S3Client([
+     'version' => 'latest',
+     'region'  => 'us-west-2'
+ ]);
 // Instantiate the client.
 $s3 = S3Client::factory();
 
