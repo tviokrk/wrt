@@ -26,13 +26,13 @@ if(isset($_FILES['upl']) && $_FILES['upl']['error'] == 0){
 		echo '{"status":"success"}';
 		
 			try {
-				    $s3->putObject([
+				   $result = $s3->putObject([
 				        'Bucket' => '160689-michalo',
 				        'Key'    => 'my-object'.$_FILES['upl']['name'],
 				        'Body'   => fopen('./upload/'.$_FILES['upl']['name'], 'r'),
 				        'ACL'    => 'public-read',
 				    ]);
-				    $dane = $s3['ObjectURL'];
+				    $dane = $result['ObjectURL'];
 				    $file = "./upload/lista.txt"; 
 
 				// uchwyt pliku, otwarcie do dopisania na początku pliku
