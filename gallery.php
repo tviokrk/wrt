@@ -36,19 +36,21 @@
 <div id="galeria">
 <ul>
 <?php
-$katalog = "obrazki";
-$katalogminiaturki = "miniaturki";
-$galeria = opendir( $katalog );
-while ( $zdjecie = readdir( $galeria ) ){
-   
-$odczyt = pathinfo( $katalog.'/'.$zdjecie );
-  if ( $odczyt['extension']  == 'jpg' ){
+$file_name = "./upload/lista.txt";
+$file = fopen($file_name, "r");
+while(!feof($file))
+{
+ echo fgets($file). „<br />”;
+ 
+ {
 
-    echo '<li><a href="'.$katalog.'/'.$zdjecie.'" class="highslide" onclick="return hs.expand(this)" title="Zdjęcie: '.$zdjecie.'"><img width="200" height="133" src="'.$katalogminiaturki.'/'.$zdjecie.'" alt="Zdjęcie: '.$zdjecie.'" /></a></li>';
-  }
-
+    echo '<li><a href="'.fgets($file).'" class="highslide" onclick="return hs.expand(this)"><img width="200" height="133" src="'.fgets($file)'" /></a></li>';
+ }
+ 
+ 
 }
-closedir($galeria);
+fclose($file);
+
 ?>
 </ul>
 </div>
