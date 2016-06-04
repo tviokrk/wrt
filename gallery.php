@@ -37,7 +37,7 @@
 <ul>
 <?php
 $file_name = "./upload/lista.txt";
-$file = file($file_name);
+$file = implode('\n', $file_name);;
 $i=0;
 while(!feof($file))
 {
@@ -46,7 +46,7 @@ while(!feof($file))
  echo '<li><a href="'.$link.'" class="highslide" onclick="return hs.expand(this)"><img width="200" height="133" src="'.$link.'" /></a></li>';
 $i++;
 }
-fclose($file);
+
 
 ?>
 </ul>
