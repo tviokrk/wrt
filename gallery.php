@@ -40,7 +40,7 @@ $file_name = "./upload/lista.txt";
 $file = fopen($file_name, "r");
 while(!feof($file))
 {
- $link = fgets($file);
+ $link = echo fgets($file);
  echo $link;
  echo '<li><a href="'.$link.'" class="highslide" onclick="return hs.expand(this)"><img width="200" height="133" src="'$link'" /></a></li>';
 }
