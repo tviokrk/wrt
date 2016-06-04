@@ -37,8 +37,8 @@
 <ul>
 <?php
 $file_name = "./upload/lista.txt";
-$file = file($file_name);
-for ($i=0; $i<count($file_name); $i++)
+$link = file($file_name);
+for ($i=0; $i<count($link); $i++)
 {
  //echo $link;
  echo '<li><a href="'.$link[$i].'" class="highslide" onclick="return hs.expand(this)"><img width="200" height="133" src="'.$link[$i].'" /></a></li>';
