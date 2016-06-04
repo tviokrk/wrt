@@ -1,13 +1,14 @@
 <?php
-use Aws\S3\S3Client;
-
+// Require the Composer autoloader.
 require 'vendor/autoload.php';
 
-$s3 = S3Client::factory(array(
-    'key'    => 'AKIAIXPGZAUCI7HCXYFA',
-    'secret' => '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',
-    'region' => 'us-west-2'
-));
+use Aws\S3\S3Client;
+
+// Instantiate an Amazon S3 client.
+$s3 = new S3Client([
+    'version' => 'latest',
+    'region'  => 'us-west-2'
+]);
 
 $bucket = '160689-michalo';
 
