@@ -13,7 +13,7 @@ $s3 = new S3Client([
      'region'  => 'us-west-2'
  ]);
 // FPDF section
-$pdf = new FPDF('P','in',array(8.5,11));
+$pdf = new FPDF();
 $pdf->AddPage();
 $pdf->SetFont('Helvetica','',12);
 
