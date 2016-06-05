@@ -14,7 +14,7 @@ $s3 = new S3Client([
  ]);
 // FPDF section
 $pdf = new FPDF();
-$pdf->AddPage();
+
 $pdf->SetFont('Helvetica','',12);
 
 // Use the high-level iterators (returns ALL of your objects).
@@ -26,6 +26,7 @@ try {
     echo "Keys retrieved!\n";
     foreach ($objects as $object) {
         //echo $object['Key'] . "\n";
+        $pdf->AddPage();
         $pdf->Cell(0,10,$object['Key']);
         $pdf->Image('https://s3-us-west-2.amazonaws.com/160689-michalo/album_error.png',10,10,100,100);
     }
