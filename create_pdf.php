@@ -1,5 +1,5 @@
 <?php
-
+date_default_timezone_set('Europe/Warsaw');
 // Include the AWS SDK using the Composer autoloader.
 require 'vendor/autoload.php';
 
