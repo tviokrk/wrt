@@ -26,7 +26,7 @@ try {
     echo "Keys retrieved!\n";
     foreach ($objects as $object) {
         echo $object['Key'] . "\n";
-        $pdf->Cell(100,100,'<img src="https://s3-us-west-2.amazonaws.com/160689-michalo/'.$object['Key'].'"'');
+        $pdf->Cell(100,100,'<img src="https://s3-us-west-2.amazonaws.com/160689-michalo/'.$object['Key']');
     }
 } catch (S3Exception $e) {
     echo $e->getMessage() . "\n";
