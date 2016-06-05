@@ -15,7 +15,7 @@ $s3 = new S3Client([
 // FPDF section
 $pdf = new FPDF();
 $pdf->AddPage();
-
+$pdf->SetFont('Helvetica','',12);
 
 // Use the high-level iterators (returns ALL of your objects).
 try {
