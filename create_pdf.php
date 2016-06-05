@@ -13,7 +13,7 @@ $s3 = new S3Client([
      'region'  => 'us-west-2'
  ]);
 // FPDF section
-$pdf = new FPDF();
+$pdf = new FPDF('P','in',array(8.5,11));
 $pdf->AddPage();
 $pdf->SetFont('Helvetica','',12);
 
@@ -31,8 +31,8 @@ try {
 } catch (S3Exception $e) {
     echo $e->getMessage() . "\n";
 }
-//$pdf->Image('https://s3-us-west-2.amazonaws.com/160689-michalo/album_error.png');
-$pdf->Cell(0,10,"welcome");
+$pdf->Image('https://s3-us-west-2.amazonaws.com/160689-michalo/album_error.png');
+//$pdf->Cell(0,10,"welcome");
 $filename="/var/www/html/upload/test.pdf";
 $pdf->Output($filename,'F');
 
