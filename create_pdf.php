@@ -25,14 +25,14 @@ try {
 
     echo "Keys retrieved!\n";
     foreach ($objects as $object) {
-        echo $object['Key'] . "\n";
-        
+        //echo $object['Key'] . "\n";
+        $pdf->Cell(0,10,$object['Key']);
+        $pdf->Image('https://s3-us-west-2.amazonaws.com/160689-michalo/album_error.png',10,10,100,100);
     }
 } catch (S3Exception $e) {
     echo $e->getMessage() . "\n";
 }
-$pdf->Cell(0,10,$object['Key']);
-$pdf->Image('https://s3-us-west-2.amazonaws.com/160689-michalo/album_error.png',10,10,100,100);
+
 unlink('/var/www/html/upload/test.pdf');
 $filename="/var/www/html/upload/test.pdf";
 $pdf->Output($filename,'F');
