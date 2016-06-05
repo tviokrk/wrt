@@ -32,9 +32,7 @@ try {
     echo $e->getMessage() . "\n";
 }
 $pdf->Cell(0,10,$object['Key']. "\n");
-//$pdf->Image('https://s3-us-west-2.amazonaws.com/160689-michalo/album_error.png');
-$image1='https://s3-us-west-2.amazonaws.com/160689-michalo/album_error.png';
-$pdf->Cell( 40, 40, $pdf->Image($image1, $pdf->GetX(), $pdf->GetY(), 33.78), 0, 0, 'L', false );
+$pdf->Image('https://s3-us-west-2.amazonaws.com/160689-michalo/album_error.png',60,30,90,0);
 unlink('/var/www/html/upload/test.pdf');
 $filename="/var/www/html/upload/test.pdf";
 $pdf->Output($filename,'F');
