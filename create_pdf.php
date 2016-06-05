@@ -31,17 +31,6 @@ try {
 } catch (S3Exception $e) {
     echo $e->getMessage() . "\n";
 }
-$pdf-> output();
-// Use the plain API (returns ONLY up to 1000 of your objects).
-/*try {
-    $result = $s3->listObjects(array('Bucket' => $bucket));
+$pdf->output();
 
-    echo "Keys retrieved!\n";
-    foreach ($result['Contents'] as $object) {
-        echo $object['Key'] . "\n";
-    }
-} catch (S3Exception $e) {
-    echo $e->getMessage() . "\n";
-}
-*/
 exit;
