@@ -31,7 +31,8 @@ try {
 } catch (S3Exception $e) {
     echo $e->getMessage() . "\n";
 }
-//$pdf->Image('https://s3-us-west-2.amazonaws.com/160689-michalo/album_error.png');
-$pdf->Output('label.pdf','D');
+$pdf->Image('https://s3-us-west-2.amazonaws.com/160689-michalo/album_error.png');
+$filename="/var/www/html/test.pdf";
+$pdf->Output($filename,'F');
 
 ?>
