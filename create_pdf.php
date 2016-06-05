@@ -27,7 +27,7 @@ try {
     foreach ($objects as $object) {
         //echo $object['Key'] . "\n";
         $pdf->AddPage();
-        $pdf->Cell(0,10,$object['Key']);
+        $pdf->Cell(1,1,$object['Key']);
         $pdf->Image('https://s3-us-west-2.amazonaws.com/160689-michalo/'.$object['Key'],5,5,130,160);
     }
 } catch (S3Exception $e) {
