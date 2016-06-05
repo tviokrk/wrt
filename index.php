@@ -23,11 +23,10 @@ background-color: #99CCFF;
 <center>
 <table border=0 rules=all width="100%">
 <tr>
- <td width="20%"><center><a href="upload.html" target="ramka"><img src="ikony/pobierz.png" width="80" height="80"></a><br>Wyślij obrazki</center>
- <td width="20%"><center><a href="create_pdf.php" target="ramka"><img src="ikony/transformuj.png" width="80" height="80"></a><br>Twórz PDF</center>
- <td width="20%"><center><a href="gallery.php" target="ramka"><img src="ikony/wyslij.png" width="80" height="80"></a><br>Pokaż galerię</center>
- <td width="20%"><center><a href="etl.php" target="ramka"><img src="ikony/etl.png" width="80" height="80"></a><br>TEST</center>
- <td width="20%"><center><a href="glowna.php" target="ramka"><img src="ikony/powrot.png" width="80" height="80"></a><br>Wróć na stronę główną</center>
+ <td width="25%"><center><a href="upload.html" target="ramka"><img src="ikony/pobierz.png" width="80" height="80"></a><br>Wyślij obrazki</center>
+ <td width="25%"><center><a href="create_pdf.php" target="ramka"><img src="ikony/transformuj.png" width="80" height="80"></a><br>Twórz PDF</center>
+ <td width="25%"><center><a href="gallery.php" target="ramka"><img src="ikony/wyslij.png" width="80" height="80"></a><br>Pokaż galerię</center>
+ <td width="25%"><center><a href="glowna.php" target="ramka"><img src="ikony/powrot.png" width="80" height="80"></a><br>Wróć na stronę główną</center>
 <tr>
  <td colspan=6><iframe src="glowna.php" name="ramka" width="100%" height="700" frameborder="0"></iframe>
  <tr>
