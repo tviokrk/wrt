@@ -10,7 +10,7 @@
   $email = $_REQUEST['email'] ;
   //$message = $_REQUEST['message'] ;
   $publicip =exec('curl ip.appspot.com');
-  //$publicip =exec('chmod 777 ./upload/test.pdf');
+  $publicip =exec('chmod 777 ./upload/test.pdf');
   $message = "Link do albumu: ".$publicip."/upload/test.pdf";
   // here we use the php mail function
   // to send an email to:
