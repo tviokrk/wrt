@@ -28,7 +28,7 @@
     $mail->SMTPAuth = true;    //włączenie autoryzacji do serwera SMTP
     $mail->Username = "michal.wrt123@gmail.com";    //nazwa użytkownika do skrzynki e-mail
     $mail->Password = "michal1234567";    //hasło użytkownika do skrzynki e-mail
-    $mail->SMTPSecure = 'tls';
+    $mail->SMTPSecure = 'ssl';
     $mail->Port = 465; //port serwera SMTP zależny od konfiguracji dostawcy usługi poczty
     $mail->Subject = "temat";    //Temat wiadomości, można stosować zmienne i znaczniki HTML
     $mail->Body = $message;    //Treść wiadomości, można stosować zmienne i znaczniki HTML     
