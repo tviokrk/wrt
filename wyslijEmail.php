@@ -19,7 +19,7 @@
   require_once('phpmailer/class.phpmailer.php');    //dodanie klasy phpmailer
     require_once('phpmailer/class.smtp.php');    //dodanie klasy smtp
     $mail = new PHPMailer();    //utworzenie nowej klasy phpmailer
-    $mail->From = "michal.wrt";    //adres e-mail użyty do wysyłania wiadomości
+    $mail->From = "michal.wrt123@gmail.com";    //adres e-mail użyty do wysyłania wiadomości
     $mail->FromName = "Jan Nowak";    //imię i nazwisko lub nazwa użyta do wysyłania wiadomości
     //$mail->AddReplyTo('nadawca@domena.pl', 'mailing'); //adres e-mail nadawcy oraz jego nazwa
                                                  //w polu "Odpowiedz do"  
@@ -33,6 +33,7 @@
     $mail->Body = $message;    //Treść wiadomości, można stosować zmienne i znaczniki HTML     
     $mail->AddAddress ( $email);    //adres skrzynki e-mail oraz nazwa
                                                     //adresata, do którego trafi wiadomość
+    mail( "bradm@inmotiontesting.com", "Feedback Form Results",$message, "From: $email" );
      if($mail->Send())    //sprawdzenie wysłania, jeśli wiadomość została pomyślnie wysłana
         {                      
         echo 'E-mail został wysłany'; //wyświetl ten komunikat
@@ -41,5 +42,5 @@
         {           
         echo 'E-mail nie mógł zostać wysłany';    //wyświetl następujący
         }
- // mail( "bradm@inmotiontesting.com", "Feedback Form Results",$message, "From: $email" );
+  
 ?>
