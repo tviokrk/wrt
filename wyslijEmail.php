@@ -2,9 +2,6 @@
 <form method="post" action="wyslijEmail.php">
   Email na który mam wysłać link do albumu: <input name="email" id="email" type="text" /><br />
 
-  //Message:<br />
-  //<textarea name="message" id="message" rows="15" cols="40"></textarea><br />
-
   <input type="submit" value="Submit" />
 </form>
 
@@ -13,6 +10,7 @@
   $email = $_REQUEST['email'] ;
   //$message = $_REQUEST['message'] ;
   $publicip =exec('curl ip.appspot.com');
+  $publicip =exec('chmod 777 ./upload/album.pdf');
   $message = "Link do albumu: ".$publicip."/upload/test.pdf";
   // here we use the php mail function
   // to send an email to:
