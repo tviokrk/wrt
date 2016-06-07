@@ -10,7 +10,7 @@
   $email = $_REQUEST['email'] ;
   //$message = $_REQUEST['message'] ;
   $publicip =exec('curl ip.appspot.com');
-  $publicip =exec('chmod 777 ./upload/test.pdf');
+  //$publicip =exec('chmod 777 ./upload/test.pdf');
   $message = "Link do albumu: ".$publicip."/upload/test.pdf";
   // here we use the php mail function
   // to send an email to:
@@ -34,7 +34,7 @@
     $mail->Body = $message;    //Treść wiadomości, można stosować zmienne i znaczniki HTML     
     $mail->AddAddress ( $email);    //adres skrzynki e-mail oraz nazwa
                                                     //adresata, do którego trafi wiadomość
-    $mail->addAttachment('/upload/test.pdf');
+    //$mail->addAttachment('./upload/test.pdf');
     //mail( "bradm@inmotiontesting.com", "Feedback Form Results",$message, "From: $email" );
     if(!$mail->send()) {
     echo 'Message could not be sent.';
