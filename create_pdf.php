@@ -37,6 +37,7 @@ try {
 unlink('/var/www/html/upload/test.pdf');
 $filename="/var/www/html/upload/test.pdf";
 $pdf->Output($filename,'F');
-echo "<a href='http://52.58.235.170/upload/test.pdf'>Link do albumu</a>";
-echo exec('curl ip.appspot.com');
+$publicip =exec('curl ip.appspot.com');
+echo "<a href='http://".$publicip."/upload/test.pdf'>Link do albumu</a>";
+
 ?>
