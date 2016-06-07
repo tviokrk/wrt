@@ -16,8 +16,8 @@
   // here we use the php mail function
   // to send an email to:
   // you@example.com
-  require_once('class.phpmailer.php');    //dodanie klasy phpmailer
-    require_once('class.smtp.php');    //dodanie klasy smtp
+  require_once('phpmailer/class.phpmailer.php');    //dodanie klasy phpmailer
+    require_once('phpmailer/class.smtp.php');    //dodanie klasy smtp
     $mail = new PHPMailer();    //utworzenie nowej klasy phpmailer
     $mail->From = "michal.wrt";    //adres e-mail użyty do wysyłania wiadomości
     $mail->FromName = "Jan Nowak";    //imię i nazwisko lub nazwa użyta do wysyłania wiadomości
