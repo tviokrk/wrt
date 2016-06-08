@@ -40,4 +40,18 @@ $pdf->Output($filename,'F');
 $publicip =exec('curl -s icanhazip.com');
 echo "<a href='http://".$publicip."/upload/test.pdf'>Link do albumu</a>";
 
+//////////////////////////////SQS
+use Aws\Sqs\SqsClient;
+$client = SqsClient::factory(array(
+    //'profile' => '<profile in your aws credentials file>'
+    'region'  => 'eu-central-1'
+));
+$client->sendMessage(array(
+    'QueueUrl'    => 'ttps://sqs.eu-central-1.amazonaws.com/881078108084/michalo-album',
+    'MessageBody' => 'An awesome message!',
+));
+
+
+/////////////////////////////////
+
 ?>
