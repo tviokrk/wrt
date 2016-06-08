@@ -23,7 +23,7 @@
     $mail->Username = "tviokrk@wp.pl";    //nazwa użytkownika do skrzynki e-mail
     $mail->Password = "zaq!@wsx";    //hasło użytkownika do skrzynki e-mail
     $mail->SMTPSecure = 'ssl';
-    //$mail->Port = 465; //port serwera SMTP zależny od konfiguracji dostawcy usługi poczty
+    $mail->Port = 587; //port serwera SMTP zależny od konfiguracji dostawcy usługi poczty
     $mail->Subject = "temat";    //Temat wiadomości, można stosować zmienne i znaczniki HTML
     $mail->Body = $message;    //Treść wiadomości, można stosować zmienne i znaczniki HTML     
     $mail->AddAddress ( $email);    //adres skrzynki e-mail oraz nazwa
