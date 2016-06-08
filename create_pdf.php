@@ -37,10 +37,10 @@ try {
 unlink('/var/www/html/upload/test.pdf');
 $filename="/var/www/html/upload/test.pdf";
 $pdf_file_contents = $pdf->Output("","S");
-//$pdf->Output($filename,'F');
+$pdf->Output($filename,'F');
 $publicip =exec('curl -s icanhazip.com');
 echo "<a href='http://".$publicip."/upload/test.pdf'>Link do albumu</a>";
-echo $pdf_file_contents;
+
 //////////////////////////////SQS SENDIND MESSAGES////////////////////////
 use Aws\Sqs\SqsClient;
 $url = 'https://sqs.eu-central-1.amazonaws.com/881078108084/michalo-album';
