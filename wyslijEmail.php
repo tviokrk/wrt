@@ -20,7 +20,7 @@
     $mail->Host = "smtp.wp.pl";    //adres serwera SMTP wysyłającego e-mail
     $mail->Mailer = "smtp";    //do wysłania zostanie użyty serwer SMTP
     $mail->SMTPAuth = true;    //włączenie autoryzacji do serwera SMTP
-    $mail->Username = "tviokrk@wp.pl";    //nazwa użytkownika do skrzynki e-mail
+    $mail->Username = "tviokrk";    //nazwa użytkownika do skrzynki e-mail
     $mail->Password = "zaq!@wsx";    //hasło użytkownika do skrzynki e-mail
     $mail->SMTPSecure = 'ssl';
     $mail->Port = 465; //port serwera SMTP zależny od konfiguracji dostawcy usługi poczty
