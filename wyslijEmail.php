@@ -1,7 +1,7 @@
 
 <?php
 date_default_timezone_set('Etc/UTC');
-require '../PHPMailerAutoload.php';
+require 'phpmailer/PHPMailerAutoload.php';
   $email = $_REQUEST['email'] ;
 
   $publicip =exec('curl ip.appspot.com');
