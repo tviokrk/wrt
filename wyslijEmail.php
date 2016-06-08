@@ -8,7 +8,7 @@
   $message = "Link do albumu: ".$publicip."/upload/test.pdf";
   
   require_once('phpmailer/class.phpmailer.php');    //dodanie klasy phpmailer
-    require_once('phpmailer/class.smtp.php');    //dodanie klasy smtp
+  require_once('phpmailer/class.smtp.php');    //dodanie klasy smtp
     
     
     $mail = new PHPMailer();    //utworzenie nowej klasy phpmailer
