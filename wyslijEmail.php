@@ -1,9 +1,3 @@
-<!DOCTYPE html>
-<form method="post" action="wyslijEmail.php">
-  Email na który mam wysłać link do albumu: <input name="email" id="email" type="text" /><br />
-
-  <input type="submit" value="Submit" />
-</form>
 
 <?php
 
