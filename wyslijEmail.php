@@ -17,7 +17,7 @@
     //$mail->AddReplyTo('nadawca@domena.pl', 'mailing'); //adres e-mail nadawcy oraz jego nazwa
                                                  //w polu "Odpowiedz do"  
     $mail->Host = "ssl://smtp.wp.pl";    //adres serwera SMTP wysyłającego e-mail
-    //$mail->Mailer = "smtp";    //do wysłania zostanie użyty serwer SMTP
+    $mail->Mailer = "smtp";    //do wysłania zostanie użyty serwer SMTP
     $mail->SMTPAuth = true;    //włączenie autoryzacji do serwera SMTP
     $mail->Username = "tviokrk";    //nazwa użytkownika do skrzynki e-mail
     $mail->Password = "zaq!@wsx";    //hasło użytkownika do skrzynki e-mail
