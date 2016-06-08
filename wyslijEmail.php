@@ -7,7 +7,7 @@
   
   $message = "Link do albumu: ".$publicip."/upload/test.pdf";
   
-  require('phpmailer/PHPMailerAutoload.php');    //dodanie klasy phpmailer
+  require('phpmailer/class.phpmailer.php');    //dodanie klasy phpmailer
   require('phpmailer/class.smtp.php');  
     
     $mail = new PHPMailer();    //utworzenie nowej klasy phpmailer
