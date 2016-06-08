@@ -21,7 +21,7 @@
     $mail->SMTPAuth = true;    //włączenie autoryzacji do serwera SMTP
     $mail->Username = "tviokrk";    //nazwa użytkownika do skrzynki e-mail
     $mail->Password = "zaq!@wsx";    //hasło użytkownika do skrzynki e-mail
-    $mail->SMTPSecure = 'ssl';
+    $mail->SMTPSecure = 'tls';
     $mail->Port = 465; //port serwera SMTP zależny od konfiguracji dostawcy usługi poczty
     $mail->Subject = "temat";    //Temat wiadomości, można stosować zmienne i znaczniki HTML
     $mail->Body = $message;    //Treść wiadomości, można stosować zmienne i znaczniki HTML     
