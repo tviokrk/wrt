@@ -40,19 +40,38 @@ $pdf->Output($filename,'F');
 $publicip =exec('curl -s icanhazip.com');
 echo "<a href='http://".$publicip."/upload/test.pdf'>Link do albumu</a>";
 
-//////////////////////////////SQS
+//////////////////////////////SQS SENDIND MESSAGES////////////////////////
 use Aws\Sqs\SqsClient;
+$url = 'https://sqs.eu-central-1.amazonaws.com/881078108084/michalo-album';
 $client = SqsClient::factory(array(
     //'profile' => '<profile in your aws credentials file>'
     'version' => 'latest',
     'region'  => 'eu-central-1'
 ));
 $client->sendMessage(array(
-    'QueueUrl'    => 'https://sqs.eu-central-1.amazonaws.com/881078108084/michalo-album',
+    'QueueUrl'    => $url,
     'MessageBody' => 'An awesome message!',
 ));
+//////////////////////////////SQS RECEVING MESSAGES////////////////////////
+while(true) {
+    $res = $client->receiveMessage(array(
+        'QueueUrl'          => $url,
+        'WaitTimeSeconds'   => 1
+    ));
+    if ($res->getPath('Messages')) {
 
+        foreach ($res->getPath('Messages') as $msg) {
+            echo "Received Msg: ".$msg['Body'];
 
+            // Do something useful with $msg['Body'] here
+
+            $res = $client->deleteMessage(array(
+                'QueueUrl'      => $url,
+                'ReceiptHandle' => $msg['ReceiptHandle']
+            ));
+        }
+    }
+}
 /////////////////////////////////
 
 ?>
