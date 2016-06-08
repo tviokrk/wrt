@@ -23,7 +23,7 @@ $mail->isSMTP();
 // 2 = client and server messages
 $mail->SMTPDebug = 2;
 //Ask for HTML-friendly debug output
-$mail->Debugoutput = 'html';
+//$mail->Debugoutput = 'html';
 //Set the hostname of the mail server
 $mail->Host = 'smtp.gmail.com';
 // use
