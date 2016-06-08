@@ -40,20 +40,20 @@ $mail->Username = "michal.wrt123@gmail.com";
 //Password to use for SMTP authentication
 $mail->Password = "michal1234567";
 //Set who the message is to be sent from
-$mail->setFrom('michal.wrt123@gmail.com', 'First Last');
+$mail->setFrom('michal.wrt123@gmail.com', 'Nadawca');
 //Set an alternative reply-to address
 
-$mail->addAddress('tviokrk@gmail.com', 'John Doe');
+$mail->addAddress($email, 'Odbiorca');
 //Set the subject line
-$mail->Subject = 'PHPMailer GMail SMTP test';
+$mail->Subject = 'Album Amazon S3';
 //Read an HTML message body from an external file, convert referenced images to embedded,
 //convert HTML into a basic plain-text alternative body
 //$mail->msgHTML(file_get_contents('contents.html'), dirname(__FILE__));
 //Replace the plain text body with one created manually
 //$mail->AltBody = 'This is a plain-text message body';
-$mail->Body = 'This is a plain-text message body';
+$mail->Body = $message;
 //Attach an image file
-//$mail->addAttachment('images/phpmailer_mini.png');
+$mail->addAttachment('upload/test.pdf');
 //send the message, check for errors
 if (!$mail->send()) {
     echo "Mailer Error: " . $mail->ErrorInfo;
