@@ -4,7 +4,7 @@ date_default_timezone_set('Etc/UTC');
 require 'phpmailer/PHPMailerAutoload.php';
   $email = $_REQUEST['email'] ;
 
-  $publicip =exec('curl ip.appspot.com');
+  $publicip =exec('curl -s icanhazip.com');
   
   $message = "Link do albumu: ".$publicip."/upload/test.pdf";
 /**
