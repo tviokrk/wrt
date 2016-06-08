@@ -16,7 +16,7 @@
     $mail->FromName = "Jan Nowak";    //imię i nazwisko lub nazwa użyta do wysyłania wiadomości
     //$mail->AddReplyTo('nadawca@domena.pl', 'mailing'); //adres e-mail nadawcy oraz jego nazwa
                                                  //w polu "Odpowiedz do"  
-    $mail->Host = "smtp.wp.pl";    //adres serwera SMTP wysyłającego e-mail
+    $mail->Host = "ssl://smtp.wp.pl";    //adres serwera SMTP wysyłającego e-mail
     //$mail->Mailer = "smtp";    //do wysłania zostanie użyty serwer SMTP
     $mail->SMTPAuth = true;    //włączenie autoryzacji do serwera SMTP
     $mail->Username = "tviokrk";    //nazwa użytkownika do skrzynki e-mail
