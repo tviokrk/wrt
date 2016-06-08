@@ -44,10 +44,11 @@ echo "<a href='http://".$publicip."/upload/test.pdf'>Link do albumu</a>";
 use Aws\Sqs\SqsClient;
 $client = SqsClient::factory(array(
     //'profile' => '<profile in your aws credentials file>'
+    'version' => 'latest',
     'region'  => 'eu-central-1'
 ));
 $client->sendMessage(array(
-    'QueueUrl'    => 'ttps://sqs.eu-central-1.amazonaws.com/881078108084/michalo-album',
+    'QueueUrl'    => 'https://sqs.eu-central-1.amazonaws.com/881078108084/michalo-album',
     'MessageBody' => 'An awesome message!',
 ));
 
