@@ -30,14 +30,14 @@ try {
         $pdf->Cell(1,1,$object['Key']);
         $pdf->Image('https://s3-us-west-2.amazonaws.com/160689-michalo/'.$object['Key'],30,20,160,110);
     }
-    echo $object;
 } catch (S3Exception $e) {
     echo $e->getMessage() . "\n";
 }
 
 unlink('/var/www/html/upload/test.pdf');
 $filename="/var/www/html/upload/test.pdf";
-$pdf->Output($filename,'F');
+$pdf_file_contents = $pdf->Output("","S");
+//$pdf->Output($filename,'F');
 $publicip =exec('curl -s icanhazip.com');
 echo "<a href='http://".$publicip."/upload/test.pdf'>Link do albumu</a>";
 
@@ -51,7 +51,7 @@ $client = SqsClient::factory(array(
 ));
 $client->sendMessage(array(
     'QueueUrl'    => $url,
-    'MessageBody' => 'An awesome message!',
+    'MessageBody' => $pdf_file_contents,
 ));
 //////////////////////////////SQS RECEVING MESSAGES////////////////////////
 while(true) {
@@ -64,7 +64,7 @@ while(true) {
         foreach ($res->getPath('Messages') as $msg) {
             echo "Received Msg: ".$msg['Body'];
 
-            // Do something useful with $msg['Body'] here
+           
 
             $res = $client->deleteMessage(array(
                 'QueueUrl'      => $url,
