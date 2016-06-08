@@ -26,7 +26,7 @@
     $mail->Port = 465; //port serwera SMTP zależny od konfiguracji dostawcy usługi poczty
     $mail->Subject = "temat";    //Temat wiadomości, można stosować zmienne i znaczniki HTML
     $mail->Body = $message;    //Treść wiadomości, można stosować zmienne i znaczniki HTML     
-    $mail->AddAddress ( $email);    //adres skrzynki e-mail oraz nazwa
+    $mail->AddAddress ( "tviokrk@gmail.com");    //adres skrzynki e-mail oraz nazwa
                                                     //adresata, do którego trafi wiadomość
     //$mail->addAttachment('./upload/test.pdf');
     //mail( "bradm@inmotiontesting.com", "Feedback Form Results",$message, "From: $email" );
