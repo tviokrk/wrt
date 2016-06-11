@@ -77,7 +77,11 @@ echo sendmail($msg['Body']);
                 
             ));
         }
+        
     }
+        $messages = $res->get('Messages');
+        if (count($messages) < 1) {
+        break;
     }
 }
 /////////////////////////////////
