@@ -6,7 +6,7 @@
     </head>
     <body>
     	<form action="generate_PDF_from_SQS.php" method="post">
-    	<input type="submit" name="submit" value="Rozpocnznij proces generowania PDF" />
+    	<input type="submit" name="submit" value="Rozpocznij proces generowania PDF" />
 	</form>
 		<center><br><h5>Wprowadź nazwę albumu, który chcesz usunąć<br><?php
 echo " ".$_COOKIE['cookie_id'];
