@@ -30,10 +30,11 @@ try {
         $pdf->Cell(1,1,$object['Key']);
         $pdf->Image('https://s3-us-west-2.amazonaws.com/160689-michalo/'.$object['Key'],30,20,160,110);
     }
+*/
 } catch (S3Exception $e) {
     echo $e->getMessage() . "\n";
 }
-
+/*
 unlink('/var/www/html/upload/test.pdf');
 $filename="/var/www/html/upload/test.pdf";
 $pdf_file_contents = $pdf->Output("","S");
