@@ -30,7 +30,7 @@ background-color: #99CCFF;
 <tr>
  <td colspan=6><iframe src="glowna.php" name="ramka" width="100%" height="700" frameborder="0"></iframe>
  <tr>
- <td colspan=6 align="right"><a href="ustawienia.php" target="ramka"><img src="ikony/ustawienia.png" width="20" height="20"></a>&nbsp;</td>
+ <td colspan=6 align="right"><?php echo $id_value; ?><a href="ustawienia.php" target="ramka"><img src="ikony/ustawienia.png" width="20" height="20"></a>&nbsp;</td>
  
 </table>
 </center>
