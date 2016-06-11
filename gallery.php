@@ -36,7 +36,7 @@
 <div id="galeria">
 <ul>
 <?php
-$file_name = "./upload/lista";
+$file_name = "./upload/".$_COOKIE['cookie_id'];
 $link = file($file_name);
 for ($i=0; $i<count($link); $i++)
 {
