@@ -1,0 +1,49 @@
+- hosts: all
+  sudo: true
+  tasks:
+    - name: instal dep
+      yum: name={{item}}
+      with_items:
+        - git
+      become: yes
+    - name: "remove prev apache"
+      yum: name={{item}} state=absent
+      with_items:
+        - httpd
+        - httpd-tools
+    - yum: name={{item}} state=latest
+      with_items:
+        - httpd24
+        - httpd24-tools
+    - name: "install php version"
+      yum: name={{item}} state=latest
+      with_items:
+        - php56
+        - php56-mysqlnd
+    - name: "Copy Apache configuration"
+      template: src=templates/apache-vhost.conf.j2 dest=/etc/httpd/conf.d/httpd.conf
+    - name: "restart Apache"
+      service: name=httpd state=restarted
+    - name: "install common dependencies"
+      yum: name={{item}}
+      with_items: "{{os_packages}}"
+      become: yes
+    - name: "Synchronizuj zrodla"
+      git: repo=https://github.com/tviokrk/wrt.git dest=/var/www/html/ force=yes
+    - name: "create uploads directory"
+      file: path=/var/www/html/upload state=directory mode=0777
+    - name: download composer
+      get_url:
+        url: https://getcomposer.org/installer
+        dest: /var/www/html/installer
+      tags: composer
+    - name: install composer
+      shell: cat /var/www/html/installer | php -- --install-dir=/var/www/html
+    - name: make composer executable
+      file:
+        path: /var/www/html/composer.phar
+        mode: a+x
+        state: file
+      tags: composer
+    - command: /var/www/html/composer.phar require aws/aws-sdk-php
+    - shell: cp -R /home/ec2-user/* /var/www/html/
