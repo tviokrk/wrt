@@ -33,7 +33,7 @@ while(true) {
             try {
                 $objects = $s3->getIterator('ListObjects', array(
                     'Bucket' => $bucket,
-                    'Prefix' => $_COOKIE['cookie_id']
+                    'Prefix' => 'c2e390409dcb7d3d53eed652c158cdb1c498cdf4'
                 ));
             
                 foreach ($objects as $object) {
