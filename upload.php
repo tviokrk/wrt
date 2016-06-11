@@ -33,8 +33,8 @@ if(isset($_FILES['upl']) && $_FILES['upl']['error'] == 0){
 			try {
 				   $result = $s3->putObject([
 				        'Bucket' => '160689-michalo',
-				        'Key'    => $_COOKIE['cookie_id'].'_'.hash('md5', $_FILES['upl']['name']),
-				        'Body'   => fopen('./upload/'.$_COOKIE['cookie_id'].'_'.hash('md5', $_FILES['upl']['name']).'.'.$extension, 'r'),
+				        'Key'    => $_COOKIE['cookie_id'].'_'.hash('md5', $_FILES['upl']['name']).'.'.$extension,
+				        'Body'   => fopen('./upload/'.$_COOKIE['cookie_id'].'_'.hash('md5', $_FILES['upl']['name']), 'r'),
 				        'ACL'    => 'public-read',
 				    ]);
 				    $dane = $result['ObjectURL'];
