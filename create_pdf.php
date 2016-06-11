@@ -28,7 +28,6 @@ while(true) {
         'WaitTimeSeconds'   => 1
     ));
         if ($res->getPath('Messages')) {
-            
         foreach ($res->getPath('Messages') as $msg) {
 ///////////////CAŁY KOD/////////////////////////
 $bucket = '160689-michalo';
