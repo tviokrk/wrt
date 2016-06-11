@@ -30,7 +30,7 @@ while(true) {
 
         foreach ($res->getPath('Emails') as $msg) {
             echo "Received Msg: ".$msg['Body'];
-            echo "  Teraz tworzę PDF i wysyłam na podany e-mail";
+            echo "\n Teraz tworzę PDF i wysyłam na podany e-mail";
 ///////////////CAŁY KOD/////////////////////////
 $bucket = '160689-michalo';
 $s3 = new S3Client([   // Instantiate an Amazon S3 client.
@@ -46,7 +46,7 @@ try {
         'Bucket' => $bucket
     ));
 
-    //echo "Keys retrieved!\n";
+    echo "Keys retrieved!\n";
     foreach ($objects as $object) {
         //echo $object['Key'] . "\n";
         $pdf->AddPage();
@@ -61,12 +61,14 @@ try {
 unlink('/var/www/html/upload/test.pdf');
 $filename="/var/www/html/upload/test.pdf";
 //$pdf_file_contents = $pdf->Output("","S");
+echo "Robię PDF\n";
 $pdf->Output($filename,'F');
+echo "DONE!\n";
 //$publicip =exec('curl -s icanhazip.com');
 //echo "<a href='http://".$publicip."/upload/test.pdf'>Link do albumu</a>";
 
 //////////////////WYSYŁAM EMAIL/////////////////
-
+echo "Wysyłam e-mail\n";
 $publicip =exec('curl -s icanhazip.com');
 $message = "Link do albumu: ".$publicip."/upload/test.pdf";
 
