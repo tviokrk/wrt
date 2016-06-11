@@ -1,8 +1,7 @@
 
 <?php
-date_default_timezone_set('Etc/UTC');
-require 'phpmailer/PHPMailerAutoload.php';
-  $email = $_REQUEST['email'] ;
+
+function sendmail($email){
 
   $publicip =exec('curl -s icanhazip.com');
   
@@ -60,5 +59,6 @@ if (!$mail->send()) {
 } else {
     echo "Message sent!";
 }
-  
+return 0;
+} 
 ?>
