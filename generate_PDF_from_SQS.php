@@ -35,7 +35,8 @@ $pdf->SetFont('Helvetica','',12);
 // Use the high-level iterators (returns ALL of your objects).
 try {
     $objects = $s3->getIterator('ListObjects', array(
-        'Bucket' => $bucket
+        'Bucket' => $bucket,
+        'Prefix' => $_COOKIE['cookie_id']
     ));
 
     //echo "Keys retrieved!\n";
