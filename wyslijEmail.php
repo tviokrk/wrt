@@ -2,7 +2,7 @@
 <?php
 function sendmail($email){
 
- echo "Wysyłam e-mail\n";
+
 $publicip =exec('curl -s icanhazip.com');
 $message = "Link do albumu: ".$publicip."/upload/test.pdf";
 
@@ -25,6 +25,6 @@ if (!$mail->send()) {
 } else {
     echo "Message sent!";
 }
-return 0;
+return $email;
 } 
 ?>
