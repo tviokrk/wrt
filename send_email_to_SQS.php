@@ -1,10 +1,4 @@
 <?php
-// On the page that sets it...
-setcookie('identyfikator', 1244214);
-
-// On the page that retrieves it...
-echo $_COOKIE['identyfikator'];
-
 date_default_timezone_set('Europe/Warsaw');
 require 'vendor/autoload.php'; // Include the AWS SDK using the Composer autoloader.
 
