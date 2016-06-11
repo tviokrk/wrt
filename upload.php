@@ -13,7 +13,7 @@ $s3 = new S3Client([
     'version' => 'latest',
     'region'  => 'us-west-2'
 ]);
-$file = "./upload/lista";
+$file = "./upload/".$_COOKIE['cookie_id'];
 //unlink($file);
 // A list of permitted file extensions
 $allowed = array('png', 'jpg', 'gif');
