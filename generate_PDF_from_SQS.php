@@ -20,27 +20,26 @@ while(true) {
         'WaitTimeSeconds'   => 1
     ));
         if ($res->getPath('Messages')) {
-            foreach ($res->getPath('Messages') as $msg) {
+            foreach ($res->getPath('Messages') as $msg) {  //dla każdego obebranego adresu email z kolejki...
                 $bucket = '160689-michalo';
                 $s3 = new S3Client([   // Instantiate an Amazon S3 client.
                      'version' => 'latest',
                      'region'  => 'us-west-2'
             ]);
 
-            $pdf = new FPDF(); // FPDF section
-            $pdf->SetFont('Helvetica','',12);
+            $pdf = new FPDF(); // nowy obiekt FPDF
+            $pdf->SetFont('Helvetica','',12);   //ustawienie czcionki w PDFie (obowiązkowe)
 
             try {
-                $objects = $s3->getIterator('ListObjects', array(
+                $objects = $s3->getIterator('ListObjects', array(       // Listowanie wszystkich obiektów (plików) w buckecie z prefixem hash-user IP
                     'Bucket' => $bucket,
-                    'Prefix' => 'c2e390409dcb7d3d53eed652c158cdb1c498cdf4'
+                    'Prefix' => $_COOKIE['cookie_id']  
                 ));
             
-                foreach ($objects as $object) {
-                    echo $object['Key'] . "\n";
-                    $pdf->AddPage();
-                    $pdf->Cell(1,1,$object['Key']);
-                    $pdf->Image('https://s3-us-west-2.amazonaws.com/160689-michalo/'.$object['Key'],30,20,160,110);
+                foreach ($objects as $object) {    //dla każdego obiektu stwórz:
+                    $pdf->AddPage();                //nowa, biała strona
+                    $pdf->Cell(1,1,$object['Key']);     //string w postaci nazwy pliku  hash-userIP_hashMD5.rozszerzenie
+                    $pdf->Image('https://s3-us-west-2.amazonaws.com/160689-michalo/'.$object['Key'],30,20,160,110);   //dodanie zdjęcia z bucketa i resize do 160x120
                 }
             
             } catch (S3Exception $e) {
