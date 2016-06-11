@@ -5,7 +5,7 @@
         <meta charset="utf-8">
     </head>
     <body>
-    	<form action="create_pdf.php" method="post">
+    	<form action="generate_PDF_from_SQS.php" method="post">
     	<input type="submit" name="submit" value="Rozpocnznij proces generowania PDF" />
 	</form>
 		<center><br><h5>Wprowadź nazwę albumu, który chcesz usunąć</h5>
