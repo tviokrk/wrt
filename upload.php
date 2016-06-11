@@ -26,7 +26,7 @@ if(isset($_FILES['upl']) && $_FILES['upl']['error'] == 0){
 		exit;
 	}
 
-	if(move_uploaded_file($_FILES['upl']['tmp_name'], './upload/'.$_COOKIE['cookie_id'].'_'.hash('md5', $_FILES['upl']['name']))){
+	if(move_uploaded_file($_FILES['upl']['tmp_name'], './upload/'.$_COOKIE['cookie_id'].'_'.hash('md5', $_FILES['upl']['name']).".".$extension)){
 		echo 'SUKCES';
 		echo '{"status":"success"}';
 		
@@ -34,7 +34,7 @@ if(isset($_FILES['upl']) && $_FILES['upl']['error'] == 0){
 				   $result = $s3->putObject([
 				        'Bucket' => '160689-michalo',
 				        'Key'    => $_COOKIE['cookie_id'].'_'.hash('md5', $_FILES['upl']['name']),
-				        'Body'   => fopen('./upload/'.$_COOKIE['cookie_id'].'_'.hash('md5', $_FILES['upl']['name']), 'r'),
+				        'Body'   => fopen('./upload/'.$_COOKIE['cookie_id'].'_'.hash('md5', $_FILES['upl']['name']).".".$extension, 'r'),
 				        'ACL'    => 'public-read',
 				    ]);
 				    $dane = $result['ObjectURL'];
