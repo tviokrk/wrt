@@ -15,7 +15,7 @@ $mail->SMTPAuth = true;    //Whether to use SMTP authentication
 $mail->Username = "michal.wrt123@gmail.com";   //Username to use for SMTP authentication - use full email address for gmail
 $mail->Password = "michal1234567";  //Password to use for SMTP authentication
 $mail->setFrom('michal.wrt123@gmail.com', 'Nadawca');  //Set who the message is to be sent from
-$mail->addAddress($msg['Body'], 'Odbiorca');  //Set an alternative reply-to address
+$mail->addAddress($email, 'Odbiorca');  //Set an alternative reply-to address
 $mail->Subject = 'Album Amazon S3';  //Set the subject line
 $mail->Body = $message;  
 $mail->addAttachment('upload/test.pdf');  //Attach an image file
