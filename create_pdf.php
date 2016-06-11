@@ -30,6 +30,7 @@ while(true) {
 
         foreach ($res->getPath('Emails') as $msg) {
             echo "Received Msg: ".$msg['Body'];
+            echo "  Teraz tworzę PDF i wysyłam na podany e-mail";
 ///////////////CAŁY KOD/////////////////////////
 $bucket = '160689-michalo';
 $s3 = new S3Client([   // Instantiate an Amazon S3 client.
