@@ -23,8 +23,8 @@ $mail->addAttachment('upload/test.pdf');  //Attach an image file
 if (!$mail->send()) {
     echo "Mailer Error: " . $mail->ErrorInfo;
 } else {
-    echo "Message sent!";
+    echo "Wiadomość wysłana!";
 }
-//return $email;
+return $email;
 } 
 ?>
