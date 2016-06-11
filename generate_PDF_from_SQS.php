@@ -55,7 +55,7 @@ $pdf->Output($filename,'F');   //tworzę PDF z obrazów z objects
 
     //////////////////WYSYŁAM EMAIL/////////////////
     //$publicip =exec('curl -s icanhazip.com');   //pobranie publicznego IP instancji
-    //$message = "Link do albumu: ".$publicip."/upload/test.pdf";  //Link do albumu
+    $message = "Dziękujemy za skorzystanie z aplikacji! Album znajduje się w załączniku";
     $mail = new PHPMailer;
     $mail->isSMTP();
     $mail->Host = 'smtp.gmail.com';
