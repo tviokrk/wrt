@@ -2,6 +2,6 @@
 
 <h1>Witaj 
 <?php
-echo " ".$_COOKIE['identyfikator'];
+echo " ".$_COOKIE['cookie_id'];
 ?>
 !</h1></center>
