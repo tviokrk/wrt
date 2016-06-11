@@ -14,7 +14,6 @@ $s3 = new S3Client([
  ]);
 // FPDF section
 $pdf = new FPDF();
-
 $pdf->SetFont('Helvetica','',12);
 
 // Use the high-level iterators (returns ALL of your objects).
@@ -22,7 +21,8 @@ try {
     $objects = $s3->getIterator('ListObjects', array(
         'Bucket' => $bucket
     ));
-
+    echo $objects;
+/*
     //echo "Keys retrieved!\n";
     foreach ($objects as $object) {
         //echo $object['Key'] . "\n";
@@ -74,5 +74,5 @@ while(true) {
     }
 }
 /////////////////////////////////
-
+*/
 ?>
