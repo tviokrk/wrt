@@ -1,7 +1,7 @@
 <?php
 // On the page that sets it...
 $id_value=hash('ripemd160', gethostbyaddr($_SERVER['REMOTE_ADDR']));
-setcookie('cookie_id', gethostbyaddr($_SERVER['REMOTE_ADDR']), time() + (86400 * 1));   //cookie na 1 dzień
+setcookie('cookie_id', $id_value, time() + (86400 * 1));   //cookie na 1 dzień
 
 // Require the Composer autoloader.
 require 'vendor/autoload.php';
