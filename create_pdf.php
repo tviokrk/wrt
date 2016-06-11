@@ -5,11 +5,10 @@ require 'vendor/autoload.php'; // Include the AWS SDK using the Composer autoloa
 require ("fpdf/fpdf.php");
 use Aws\S3\S3Client;
 use Aws\S3\Exception\S3Exception;
-
+use Aws\Sqs\SqsClient;
 
 $email = $_REQUEST['email'] ;
 //////////////////////////////SQS SENDIND MESSAGES////////////////////////
-use Aws\Sqs\SqsClient;
 $url = 'https://sqs.eu-central-1.amazonaws.com/881078108084/michalo-album';
 $client = SqsClient::factory(array(
     //'profile' => '<profile in your aws credentials file>'
