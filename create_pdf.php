@@ -27,9 +27,10 @@ while(true) {
         'QueueUrl'          => $url,
         'WaitTimeSeconds'   => 1
     ));
-    if ($res->getPath('Messages')) {
-        $messages_count = $result->get('Messages');
-        if (count($messages_count) > 0) {
+    $messages_count = $result->get('Messages');
+    if (count($messages_count) > 0) {
+        if ($res->getPath('Messages')) {
+        
          
    
         foreach ($res->getPath('Messages') as $msg) {
@@ -84,8 +85,7 @@ echo sendmail($msg['Body']);
             ));
         }
     }
-    }
-    break;
+    } break;
 }
 /////////////////////////////////
 
