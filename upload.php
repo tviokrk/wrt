@@ -45,6 +45,7 @@ if(isset($_FILES['upl']) && $_FILES['upl']['error'] == 0){
 					} catch (Aws\Exception\S3Exception $e) {
 					    echo "Pojawił się błąd w trakcie wysyłania pliku.\n";
 					}
+					include 'send_email_to_SQS.php';
 		exit;
 	}
 }
