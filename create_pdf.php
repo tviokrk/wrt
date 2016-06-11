@@ -25,7 +25,8 @@ $client->sendMessage(array(
 while(true) {
     $res = $client->receiveMessage(array(
         'QueueUrl'          => $url,
-        'WaitTimeSeconds'   => 1
+        'WaitTimeSeconds'   => 1,
+        'MaxNumberOfMessages' => 2
     ));
     $messages_count = $res->get('Messages');
     if (count($messages_count) > 0) {
@@ -85,7 +86,7 @@ echo sendmail($msg['Body']);
             ));
         }
     }
-    } break;
+    }
 }
 /////////////////////////////////
 
