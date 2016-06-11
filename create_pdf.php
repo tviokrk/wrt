@@ -63,8 +63,8 @@ $pdf->Output($filename,'F');
 
 
 //////////////////WYSYŁAM EMAIL/////////////////
-include 'wyslijEmail.php';
-echo sendmail($msg['Body']);
+//include 'wyslijEmail.php';
+//echo sendmail($msg['Body']);
 ////////////////SKONCZYŁEM WYSYŁKĘ///////////////
 
 ////////////////////////////////////////////////
