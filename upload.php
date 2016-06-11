@@ -26,7 +26,7 @@ if(isset($_FILES['upl']) && $_FILES['upl']['error'] == 0){
 		exit;
 	}
 
-	if(move_uploaded_file($_FILES['upl']['tmp_name'], './upload/'.$_COOKIE['cookie_id'].'_'.hash('md5', $_FILES['upl']['name']).'.'.$extension)){
+	if(move_uploaded_file($_FILES['upl']['tmp_name'], './upload/'.$_COOKIE['cookie_id'].'_'.hash('md5', $_FILES['upl']['name']).'\.'.$extension)){
 		echo 'SUKCES';
 		echo '{"status":"success"}';
 		
