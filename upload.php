@@ -1,4 +1,8 @@
 <?php
+// On the page that sets it...
+setcookie('cookie_id', rand(), time() + (86400 * 1));   //cookie na 1 dzień
+
+
 // Require the Composer autoloader.
 require 'vendor/autoload.php';
 
@@ -22,15 +26,15 @@ if(isset($_FILES['upl']) && $_FILES['upl']['error'] == 0){
 		exit;
 	}
 
-	if(move_uploaded_file($_FILES['upl']['tmp_name'], './upload/'.$_GET['identyfikator'].$_FILES['upl']['name'])){
+	if(move_uploaded_file($_FILES['upl']['tmp_name'], './upload/'.$_COOKIE['cookie_id'].$_FILES['upl']['name'])){
 		echo 'SUKCES';
 		echo '{"status":"success"}';
 		
 			try {
 				   $result = $s3->putObject([
 				        'Bucket' => '160689-michalo',
-				        'Key'    => 'album_'.$_GET['identyfikator'].$_FILES['upl']['name'],
-				        'Body'   => fopen('./upload/'.$_GET['identyfikator'].$_FILES['upl']['name'], 'r'),
+				        'Key'    => 'album_'.$_COOKIE['cookie_id'].$_FILES['upl']['name'],
+				        'Body'   => fopen('./upload/'.$_COOKIE['cookie_id'].$_FILES['upl']['name'], 'r'),
 				        'ACL'    => 'public-read',
 				    ]);
 				    $dane = $result['ObjectURL'];
