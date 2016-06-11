@@ -27,7 +27,7 @@ while(true) {
         'QueueUrl'          => $url,
         'WaitTimeSeconds'   => 1
     ));
-    $messages_count = $result->get('Messages');
+    $messages_count = $res->get('Messages');
     if (count($messages_count) > 0) {
         if ($res->getPath('Messages')) {
         
