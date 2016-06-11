@@ -21,13 +21,17 @@ $client->sendMessage(array(
     'MessageBody' => $email,
 ));
 //////////////////////////////SQS RECEVING MESSAGES////////////////////////
+
 while(true) {
     $res = $client->receiveMessage(array(
         'QueueUrl'          => $url,
         'WaitTimeSeconds'   => 1
     ));
     if ($res->getPath('Messages')) {
-
+        $messages_count = $result->get('Messages');
+        if (count($messages_count) > 0) {
+         
+   
         foreach ($res->getPath('Messages') as $msg) {
             echo "Received Msg: ".$msg['Body'];
             echo "\n Teraz tworzę PDF i wysyłam na podany e-mail";
@@ -79,8 +83,9 @@ echo sendmail($msg['Body']);
                 
             ));
         }
-        break;
-    }echo "Nasłuchuję...";
+    }
+    }
+    break;
 }
 /////////////////////////////////
 
