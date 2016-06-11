@@ -47,7 +47,7 @@ while(true) {
                 echo $e->getMessage() . "\n";
             }
 
-unlink('/var/www/html/upload/album.pdf');  //kasownaie pliku z albumem
+//unlink('/var/www/html/upload/album.pdf');  //kasownaie pliku z albumem
 $filename="/var/www/html/upload/album.pdf";   //definicja nazwy pliku wyjściowego
 
 $pdf->Output($filename,'F');   //tworzę PDF z obrazów z objects
