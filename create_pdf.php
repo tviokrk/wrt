@@ -25,9 +25,9 @@ while(true) {
         'QueueUrl'          => $url,
         'WaitTimeSeconds'   => 1
     ));
-    if ($res->getPath('Emails')) {
+    if ($res->getPath('Messages')) {
 
-        foreach ($res->getPath('Emails') as $msg) {
+        foreach ($res->getPath('Messages') as $msg) {
             echo "Received Msg: ".$msg['Body'];
             echo "\n Teraz tworzę PDF i wysyłam na podany e-mail";
 ///////////////CAŁY KOD/////////////////////////
