@@ -1,6 +1,6 @@
 <?php
 // On the page that sets it...
-$id_value=hash('ripemd160', gethostbyaddr($_SERVER['REMOTE_ADDR']));
+$id_value=hash('ripemd160', gethostbyaddr($_SERVER['REMOTE_ADDR']));   //hash ip usera
 setcookie('cookie_id', $id_value, time() + (86400 * 1));   //cookie na 1 dzień
 
 // Require the Composer autoloader.
@@ -13,10 +13,10 @@ $s3 = new S3Client([
     'version' => 'latest',
     'region'  => 'us-west-2'
 ]);
-$file = "./upload/".$_COOKIE['cookie_id'];
-//unlink($file);
+$file = "./upload/".$_COOKIE['cookie_id']; //utworzenie pliku o nazwie hash-usera, każdy ma swój album
+
 // A list of permitted file extensions
-$allowed = array('png', 'jpg', 'gif');
+$allowed = array('png', 'jpg', 'gif');  //dozwolone rozszerzenia
 if(isset($_FILES['upl']) && $_FILES['upl']['error'] == 0){
 	$extension = pathinfo($_FILES['upl']['name'], PATHINFO_EXTENSION);
 
@@ -25,40 +25,30 @@ if(isset($_FILES['upl']) && $_FILES['upl']['error'] == 0){
 		echo '{"status":"error"}';
 		exit;
 	}
-
+        //przenoszenie pliku z mastera do bucketa
 	if(move_uploaded_file($_FILES['upl']['tmp_name'], './upload/'.$_COOKIE['cookie_id'].'_'.$_FILES['upl']['name'])){
 		echo 'SUKCES';
 		echo '{"status":"success"}';
 		
-			try {
+			try {  //tworzenie pliku w buckecie, o nazwie  hash ip-usera_hashMD5pliku.rozszerzenie
 				   $result = $s3->putObject([
 				        'Bucket' => '160689-michalo',
 				        'Key'    => $_COOKIE['cookie_id'].'_'.hash('md5', $_FILES['upl']['name']).".".$extension,
 				        'Body'   => fopen('./upload/'.$_COOKIE['cookie_id'].'_'.$_FILES['upl']['name'], 'r'),
-				        'ACL'    => 'public-read',
+				        'ACL'    => 'public-read',  //nadalnei uprawnień do czytania dla everyone
 				    ]);
-				    $dane = $result['ObjectURL'];
+				    $dane = $result['ObjectURL'];  //zwrócenie linku i zapis go do pliku poniżej o nazwie hash-ip usera
 				    
-				// uchwyt pliku, otwarcie do dopisania na początku pliku
 				
-					$fp = fopen($file, "a"); 
-					// blokada pliku do zapisu 
-					flock($fp, 2); 
-					// zapisanie danych do pliku 
-					fwrite($fp, $dane."\r\n"); 
-					// odblokowanie pliku 
-					flock($fp, 3); 
-					// zamknięcie pliku 
-					fclose($fp); 
+				
+					$fp = fopen($file, "a"); // uchwyt pliku, otwarcie do dopisania na początku pliku
+					flock($fp, 2); // blokada pliku do zapisu 
+					fwrite($fp, $dane."\r\n");  // zapisanie danych do pliku 
+					flock($fp, 3); // odblokowanie pliku 
+					fclose($fp);  // zamknięcie pliku 
 					} catch (Aws\Exception\S3Exception $e) {
-					    echo "There was an error uploading the file.\n";
+					    echo "Pojawił się błąd w trakcie wysyłania pliku.\n";
 					}
-		
-		
-		
-		
-		
-		
 		exit;
 	}
 }
