@@ -19,5 +19,5 @@ $client->sendMessage(array(    //wysłanie do kolejki maila z formularza
     'MessageBody' => $email,
 ));
 /////////////////////////////////
-
+echo "Dodano twoje zgłoszenie do kolejki. Email przyjdzie dosłownie za kilka chwil!";
 ?>
