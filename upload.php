@@ -1,8 +1,4 @@
 <?php
-// On the page that sets it...
-setcookie('cookie_id', rand(), time() + (86400 * 1));   //cookie na 1 dzień
-
-
 // Require the Composer autoloader.
 require 'vendor/autoload.php';
 
