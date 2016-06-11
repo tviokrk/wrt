@@ -37,7 +37,7 @@ while(true) {
                 ));
             
                 foreach ($objects as $object) {
-                    //echo $object['Key'] . "\n";
+                    echo $object['Key'] . "\n";
                     $pdf->AddPage();
                     $pdf->Cell(1,1,$object['Key']);
                     $pdf->Image('https://s3-us-west-2.amazonaws.com/160689-michalo/'.$object['Key'],30,20,160,110);
