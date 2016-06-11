@@ -1,12 +1,12 @@
 <?php
 date_default_timezone_set('Europe/Warsaw');   //ustawiam czas wymagany przez S3
-require 'phpmailer/PHPMailerAutoload.php';   //import bibliotek
-require 'vendor/autoload.php'; // Include the AWS SDK using the Composer autoloader.
-require ("fpdf/fpdf.php");      //import bibliotek potrzebnych do wygenerowania PDF
+require 'phpmailer/PHPMailerAutoload.php';  
+require 'vendor/autoload.php'; 
+require ("fpdf/fpdf.php");      
 
-use Aws\S3\S3Client;    //AmazonSDK , pobrane przy pomocy projekt.yml
-use Aws\S3\Exception\S3Exception;   //AmazonSDK , pobrane przy pomocy projekt.yml
-use Aws\Sqs\SqsClient;      //AmazonSDK , pobrane przy pomocy projekt.yml
+use Aws\S3\S3Client;    //AmazonSDK pobrane przy pomocy projekt.yml
+use Aws\S3\Exception\S3Exception;   
+use Aws\Sqs\SqsClient;      
 
 $url = 'https://sqs.eu-central-1.amazonaws.com/881078108084/michalo-album';  //adres www do bucketu
 $client = SqsClient::factory(array(     // Instantiate an Amazon SQS client
@@ -47,7 +47,7 @@ while(true) {
                 echo $e->getMessage() . "\n";
             }
 
-//unlink('/var/www/html/upload/album.pdf');  //kasownaie pliku z albumem
+unlink('/var/www/html/upload/album.pdf');  //kasownaie pliku z albumem
 $filename="/var/www/html/upload/album.pdf";   //definicja nazwy pliku wyjściowego
 
 $pdf->Output($filename,'F');   //tworzę PDF z obrazów z objects
