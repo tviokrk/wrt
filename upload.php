@@ -33,7 +33,7 @@ if(isset($_FILES['upl']) && $_FILES['upl']['error'] == 0){
 			try {
 				   $result = $s3->putObject([
 				        'Bucket' => '160689-michalo',
-				        'Key'    => 'album_'.$_COOKIE['cookie_id'].$_FILES['upl']['name'],
+				        'Key'    => $_COOKIE['cookie_id'].$_FILES['upl']['name'],
 				        'Body'   => fopen('./upload/'.$_COOKIE['cookie_id'].$_FILES['upl']['name'], 'r'),
 				        'ACL'    => 'public-read',
 				    ]);
