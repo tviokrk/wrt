@@ -48,9 +48,9 @@ while(true) {
             }
 
 //unlink('/var/www/html/upload/test.pdf');  //kasownaie pliku z albumem
-//$filename="/var/www/html/upload/album.pdf";   //definicja nazwy pliku wyjściowego
+$filename="/var/www/html/upload/album.pdf";   //definicja nazwy pliku wyjściowego
 
-$pdf->Output("/var/www/html/upload/album.pdf",'F');   //tworzę PDF z obrazów z objects
+$pdf->Output($filename,'F');   //tworzę PDF z obrazów z objects
 
 
     //////////////////WYSYŁAM EMAIL/////////////////
