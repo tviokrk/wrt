@@ -22,8 +22,5 @@ $client->sendMessage(array(    //wysłanie do kolejki maila z formularza
     'MessageBody' => $email,
 ));
 /////////////////////////////////
-if(processing == success) {
-  header("Location:aplikacja.php");
-  exit();
-}
+header("Location: aplikacja.php");
 ?>
