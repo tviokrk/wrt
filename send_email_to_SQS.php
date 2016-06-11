@@ -6,7 +6,7 @@ use Aws\S3\S3Client;
 use Aws\S3\Exception\S3Exception;
 use Aws\Sqs\SqsClient;
 
-$email = $_COOKIE['email']   //odebranie maila z formularza
+$email = $_COOKIE['email'];   //odebranie maila z formularza
 //////////////////////////////SQS SENDIND MESSAGES////////////////////////
 $url = 'https://sqs.eu-central-1.amazonaws.com/881078108084/michalo-album';
 $client = SqsClient::factory(array(    //inicjacja klienta dla SQSa
