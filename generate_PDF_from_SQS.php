@@ -48,9 +48,9 @@ while(true) {
             }
 
 //unlink('/var/www/html/upload/test.pdf');  //kasownaie pliku z albumem
-$filename="/var/www/html/upload/album.pdf";   //definicja nazwy pliku wyjściowego
+//$filename="/var/www/html/upload/album.pdf";   //definicja nazwy pliku wyjściowego
 
-$pdf->Output($filename,'F');   //tworzę PDF z obrazów z objects
+$pdf->Output("/var/www/html/upload/album.pdf",'F');   //tworzę PDF z obrazów z objects
 
 
     //////////////////WYSYŁAM EMAIL/////////////////
@@ -68,7 +68,7 @@ $pdf->Output($filename,'F');   //tworzę PDF z obrazów z objects
     $mail->addAddress($msg['Body'], 'Odbiorca');  //Set an alternative reply-to address
     $mail->Subject = 'Album Amazon S3';  //Set the subject line
     $mail->Body = $message;  
-    $mail->addAttachment('upload/test.pdf');  //Attach an image file
+    $mail->addAttachment('upload/album.pdf');  //Attach an image file
     //send the message, check for errors
     if (!$mail->send()) {
         echo "Mailer Error: " . $mail->ErrorInfo;
