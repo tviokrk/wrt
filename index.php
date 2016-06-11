@@ -24,7 +24,7 @@ background-color: #99CCFF;
 <table border=0 rules=all width="100%">
 <tr>
  <td width="25%"><center><a href="upload.html" target="ramka"><img src="ikony/pobierz.png" width="80" height="80"></a><br>Wyślij obrazki</center>
- <td width="25%"><center><a href="createPDF.html" target="ramka"><img src="ikony/transformuj.png" width="80" height="80"></a><br>Twórz PDF i wyślij e-mail</center>
+ <td width="25%"><center><a href="send_email_to_SQS.html" target="ramka"><img src="ikony/transformuj.png" width="80" height="80"></a><br>Twórz PDF i wyślij e-mail</center>
  <td width="25%"><center><a href="gallery.php" target="ramka"><img src="ikony/wyslij.png" width="80" height="80"></a><br>Pokaż galerię</center>
  <td width="25%"><center><a href="glowna.php" target="ramka"><img src="ikony/powrot.png" width="80" height="80"></a><br>Wróć na stronę główną</center>
 <tr>
