@@ -25,6 +25,6 @@ if (!$mail->send()) {
 } else {
     echo "Message sent!";
 }
-return $email;
+//return $email;
 } 
 ?>
