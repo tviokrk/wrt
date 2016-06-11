@@ -27,16 +27,9 @@ while(true) {
         'QueueUrl'          => $url,
         'WaitTimeSeconds'   => 1
     ));
-    $messages_count = $res->get('Messages');
-    if (count($messages_count) > 0) {
-        echo count($messages_count);
         if ($res->getPath('Messages')) {
-        
-         
-   
+            
         foreach ($res->getPath('Messages') as $msg) {
-            echo "Received Msg: ".$msg['Body'];
-            echo "\n Teraz tworzę PDF i wysyłam na podany e-mail";
 ///////////////CAŁY KOD/////////////////////////
 $bucket = '160689-michalo';
 $s3 = new S3Client([   // Instantiate an Amazon S3 client.
@@ -52,7 +45,7 @@ try {
         'Bucket' => $bucket
     ));
 
-    echo "Keys retrieved!\n";
+    //echo "Keys retrieved!\n";
     foreach ($objects as $object) {
         //echo $object['Key'] . "\n";
         $pdf->AddPage();
@@ -67,9 +60,8 @@ try {
 unlink('/var/www/html/upload/test.pdf');
 $filename="/var/www/html/upload/test.pdf";
 
-echo "Robię PDF\n";
 $pdf->Output($filename,'F');
-echo "DONE!\n";
+
 
 //////////////////WYSYŁAM EMAIL/////////////////
 include 'wyslijEmail.php';
