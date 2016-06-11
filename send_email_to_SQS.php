@@ -19,5 +19,5 @@ $client->sendMessage(array(
     'MessageBody' => $email,
 ));
 /////////////////////////////////
-
+echo "Do kilku chwil na maila zostanie wysłany wygenerowany album!";
 ?>
