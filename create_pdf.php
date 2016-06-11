@@ -78,8 +78,6 @@ echo sendmail($msg['Body']);
             ));
         }
         
-    } else {
-        break;
     }
     
 }
