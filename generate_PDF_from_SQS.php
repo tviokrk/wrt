@@ -64,7 +64,7 @@ $pdf->Output($filename,'F');   //tworzę PDF z obrazów z objects
     $mail->Username = "michal.wrt123@gmail.com";   //Username to use for SMTP authentication - use full email address for gmail
     $mail->Password = "michal1234567";  //Password to use for SMTP authentication
     $mail->setFrom('michal.wrt123@gmail.com', 'Amazon Gallery');  //Set who the message is to be sent from
-    $mail->addAddress($msg['Body'], 'Odbiorca');  //Set an alternative reply-to address
+    $mail->addAddress($msg['Body'], 'Odbiorca');  //wysyłamy album na adres z kolejki
     $mail->Subject = 'Album Amazon S3';  //Set the subject line
     $mail->Body = $message;  
     $mail->addAttachment('upload/album.pdf');  //Attach an image file
