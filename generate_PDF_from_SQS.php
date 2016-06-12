@@ -33,7 +33,7 @@ while(true) {
             try {
                 $objects = $s3->getIterator('ListObjects', array(       // Listowanie wszystkich obiektów (plików) w buckecie z prefixem hash-user IP
                     'Bucket' => $bucket,
-                    'Prefix' => $_COOKIE['cookie_id']  
+                    'Prefix' => hash('ripemd160', $msg['Body'])  
                 ));
             
                 foreach ($objects as $object) {    //dla każdego obiektu stwórz:
